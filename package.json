@@ -5,11 +5,10 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "dev": "nodemon index.js",
-    "start": "node index.js",
-    "build": "cd ../client && npm install && npm run build",
-    "postinstall": "cd ../client && npm install && npm run build",
-    "heroku-postbuild": "cd ../client && npm install && npm run build"
+    "install": "cd server && npm install && cd ../client && npm install",
+    "build": "cd client && npm run build",
+    "start": "cd server && node index.js",
+    "heroku-postbuild": "cd client && npm install && npm run build"
   },
   "keywords": [],
   "author": "",
