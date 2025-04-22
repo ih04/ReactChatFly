@@ -7,8 +7,9 @@
   "scripts": {
     "dev": "nodemon index.js",
     "start": "node index.js",
+    "build": "cd client && npm install && npm run build",
     "heroku-postbuild": "cd ../client && npm install && npm run build",
-    "postinstall": "cd client && npm install && npm run build"
+    
   },
   "keywords": [],
   "author": "",
