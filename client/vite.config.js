@@ -12,5 +12,9 @@ export default defineConfig({
         ws:true
       }
     }
+  },
+  build: {
+    outDir: 'build',
+    emptyOutDir: true
   }
 })
