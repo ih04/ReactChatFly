@@ -5,10 +5,9 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "install": "cd server && npm install && cd ../client && npm install",
-    "build": "cd client && npm run build",
-    "start": "cd server && node index.js",
-    "heroku-postbuild": "cd client && npm install && npm run build"
+    "postinstall": "npm run build",
+    "build": "cd client && npm install && npm run build",
+    "start": "cd server && npm install && node index.js"
   },
   "keywords": [],
   "author": "",
