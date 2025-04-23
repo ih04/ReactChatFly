@@ -3,9 +3,9 @@ nixPkgs = ["nodejs-18_x"]
 
 [phases.build]
 commands = [
-    "cd client && npm install && npm run build",
-    "cd ../server && npm install"
+    "npm install --workspaces",
+    "npm run build"
 ]
 
 [start]
-cmd = "cd server && npm start"
+cmd = "npm start"
