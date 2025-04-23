@@ -1,7 +1,7 @@
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
 import tailwindcss from '@tailwindcss/vite'
-const VITE_WS_URL = 'https://reactchat-production-81c6.up.railway.app/'
+
 
 // https://vite.dev/config/
 export default defineConfig({
