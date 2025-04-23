@@ -3,7 +3,7 @@ import {useState, useEffect, useRef} from 'react'
 import { collection, addDoc, serverTimestamp,doc, setDoc, updateDoc,getDocs } from "firebase/firestore";
 import { db } from "./firebase";
 
-const socket = soc("https://reactchat-production-81c6.up.railway.app")
+const socket = soc("/")
 const docRef = doc(db,"documentos","mensajes");
 // const mensajesRef = collection(db, "documentos","mensajes","mensajes");
 
