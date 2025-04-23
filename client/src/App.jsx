@@ -119,7 +119,7 @@ function App() {
             <li key={i} className={
               `my-2 p-2 rounded-[10px] flex  w-min  text-sm  ${m.from === 'Yo' ? 'bg-sky-700 ml-auto':'bg-black'}`
               }>
-              <span className="w-min  flex items-center inline-flex h-[30px]">{m.cuerpo}</span>  
+              <span className="w-min  flex items-center inline-flex h-min">{m.cuerpo}</span>  
               <span className=" w-min  inline-block  h-fit mt-auto ml-3">{m.fecha}</span>
             </li></>
           ))
