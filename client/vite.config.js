@@ -10,7 +10,7 @@ export default defineConfig({
   server:{
     proxy:{
       '/socket.io':{
-        target: process.env.VITE_WS_URL || 'http://localhost:8000',
+        target: process.env.VITE_WS_URL || 'http://localhost:4000',
         ws:true
       }
     }

@@ -36,13 +36,22 @@ console.log("server/index.js*******************"+__filename+"*******************
 console.log("server/index.js*******************"+__dirname+"*******************");
 
 //  Servir archivos estáticos del frontend React
-// app.use(express.static(path.join(__dirname, 'public')))
-app.use(express.static(path.join(__dirname, '../client')))
+app.use(express.static(path.join(__dirname, 'public')))
+
 
 //  Cualquier otra ruta debe devolver el index.html del frontend
+// app.get('*', (req, res) => {
+//   res.sendFile(path.join(__dirname, 'public', 'index.html'))
+// })
+
+// Por esto para mayor seguridad:
 app.get('*', (req, res) => {
-  // res.sendFile(path.join(__dirname, 'public', 'index.html'))
-  res.sendFile(path.join(__dirname, '../client', 'index.html'))
+  const indexPath = path.join(__dirname, 'public', 'index.html');
+  if (fs.existsSync(indexPath)) {
+    res.sendFile(indexPath);
+  } else {
+    res.status(404).send('Archivo no encontrado');
+  }
 })
 
 server.listen(puerto)
