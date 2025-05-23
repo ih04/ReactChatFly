@@ -3,7 +3,8 @@ import {Server} from 'socket.io'
 import http from 'http'
 import path from 'path'
 import { fileURLToPath } from 'url'
-
+console.log("server/index.js*******************"+"__filename"+"*******************");
+console.log("server/index.js*******************"+"__dirname"+"*******************");
 const app = express()
 const puerto = process.env.PORT || 8000
 const server = http.createServer(app)
@@ -31,8 +32,8 @@ soc.on('connection', socket => {
 //  __dirname workaround para ESModules
 const __filename = fileURLToPath(import.meta.url)
 const __dirname = path.dirname(__filename)
-console.log(__filename);
-console.log(__dirname);
+console.log("server/index.js*******************"+__filename+"*******************");
+console.log("server/index.js*******************"+__dirname+"*******************");
 
 //  Servir archivos estáticos del frontend React
 app.use(express.static(path.join(__dirname, 'public')))
