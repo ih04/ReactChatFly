@@ -5,7 +5,7 @@ import path from 'path'
 import { fileURLToPath } from 'url'
 
 const app = express()
-const puerto = process.env.PORT || 4000
+const puerto = process.env.PORT || 8000
 const server = http.createServer(app)
 
 //const soc = new Server(server)
