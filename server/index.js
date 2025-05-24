@@ -43,9 +43,11 @@ app.use(express.static(path.join(__dirname, 'public')))
 //  Cualquier otra ruta debe devolver el index.html del frontend
 // app.get('*', (req, res) => {
 app.get('/{*any}', (req, res) => {
+  __dirname = '/workspace/client'
   console.log("**********Sending file:", path.join(__dirname, 'public', 'index.html'));
-
+    
   res.sendFile(path.join(__dirname, 'public', 'index.html'))
+  // res.sendFile(path.join('/workspace/client', 'public', 'index.html'))
 })
 
 // Por esto para mayor seguridad:
