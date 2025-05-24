@@ -47,7 +47,7 @@ app.get('/{*any}', (req, res) => {
   console.log("**********Sending file:", path.join(__dirname, 'public', 'index.html'));
     
   // res.sendFile(path.join(__dirname, 'public', 'index.html'))
-  res.sendFile(path.join('/workspace/client', 'public', 'index.html'))
+  res.sendFile(path.join('/workspace/client', 'index.html'))
 })
 
 // Por esto para mayor seguridad:
