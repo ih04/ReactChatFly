@@ -41,7 +41,8 @@ app.use(express.static(path.join(__dirname, 'public')))
 
 
 //  Cualquier otra ruta debe devolver el index.html del frontend
-app.get('*', (req, res) => {
+// app.get('*', (req, res) => {
+app.get('/{*any}', (req, res) => {
   console.log("**********Sending file:", path.join(__dirname, 'public', 'index.html'));
 
   res.sendFile(path.join(__dirname, 'public', 'index.html'))
