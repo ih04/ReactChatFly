@@ -3,6 +3,7 @@ import {Server} from 'socket.io'
 import http from 'http'
 import path from 'path'
 import { fileURLToPath } from 'url'
+import fs from 'fs'
 console.log("server/index.js*******************"+"__filename"+"*******************");
 console.log("server/index.js*******************"+"__dirname"+"*******************");
 const app = express()
@@ -40,19 +41,21 @@ app.use(express.static(path.join(__dirname, 'public')))
 
 
 //  Cualquier otra ruta debe devolver el index.html del frontend
-// app.get('*', (req, res) => {
-//   res.sendFile(path.join(__dirname, 'public', 'index.html'))
-// })
+app.get('*', (req, res) => {
+  console.log("**********Sending file:", path.join(__dirname, 'public', 'index.html'));
+
+  res.sendFile(path.join(__dirname, 'public', 'index.html'))
+})
 
 // Por esto para mayor seguridad:
-app.get('*', (req, res) => {
-  const indexPath = path.join(__dirname, 'public', 'index.html');
-  if (fs.existsSync(indexPath)) {
-    res.sendFile(indexPath);
-  } else {
-    res.status(404).send('Archivo no encontrado');
-  }
-})
+// app.get('*', (req, res) => {
+//   const indexPath = path.join(__dirname, 'public', 'index.html');
+//   if (fs.existsSync(indexPath)) {
+//     res.sendFile(indexPath);
+//   } else {
+//     res.status(404).send('Archivo no encontrado');
+//   }
+// })
 
 server.listen(puerto)
 console.log('El servidor está en el puerto',puerto)
